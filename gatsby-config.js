@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Holo - Gatsby Starter`,
-    description: `Holo is a visually striking and highly customizable open source theme built on the powerful Gatsby framework and integrated with the versatile Decap CMS`,
-    siteUrl: "https://holo-theme.netlify.app/",
-    author: `Travis Lord <hi@travislord.xyz>`,
+    title: `Northern Voice Reels | Professional Voice Reel Production in Manchester`,
+    description: `Northern Voice Reels - Based in Manchester, we help actors create voice reels that reflect the casting potential of their voices`,
+    siteUrl: "https://www.nvreels.co.uk/",
+    author: `Peter Broadhead <p.t.broadhead@gmail.com>`,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -79,13 +79,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Holo - Gatsby Starter Theme`,
-        short_name: `Holo`,
+        name: `Northern Voice Reels | Voice Reel Production`,
+        short_name: `NVR`,
         start_url: `/`,
         background_color: `#ebebfa`,
         theme_color: `#ebebfa`,
         display: `standalone`,
-        icon: `src/images/3D-liquid-abstract-5.webp`, // This path is relative to the root of the site.
+        icon: `src/images/3D-liquid-abstract-5.webp`,
       },
     },
     {

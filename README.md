@@ -1,5 +1,5 @@
 
- <h1 align="center">Holo - Gatsby Theme </h1>
+ <h1 align="center">Nortern Voice Reel </h1>
 
 
 ![Holo - Gatsby Theme](https://github.com/lilxyzz/holo-theme/blob/main/static/img/holo-cover.png)
