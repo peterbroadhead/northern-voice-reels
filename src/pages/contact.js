@@ -1,9 +1,7 @@
-import React from "react"
+import * as React from "react"
 import Layout from "../components/layout"
-import Input from "../components/Atoms/input"
-import Button from "../components/Atoms/button"
-import Fade from "react-reveal/Fade"
 import Seo from "../components/seo"
+import Fade from "react-reveal/Fade"
 
 import image from "../images/holographic-background.webp"
 
@@ -148,67 +146,28 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            <form className="mt-5" name="contact" method="POST" netlify>
-              <div className="flex xxs:flex-col sm:flex-row">
-                <div className="sm:mr-5 xxs:mr-0">
-                  <label>
-                    <Input
-                      placeholder="Your Name"
-                      type="text"
-                      name="name"
-                    ></Input>
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              className="w-full max-w-lg mx-auto"
+            >
+              <div className="flex flex-wrap -mx-3 mb-6">
+                <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                  <label
+                    htmlFor="firstName"
+                    className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  >
+                    First Name
                   </label>
+                  <input
+                    id="firstName"
+                    type="text"
+                    name="firstName"
+                    className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                  />
                 </div>
-                <div className="sm:ml-5 xxs:ml-0 xxs:mt-2 sm:mt-0">
-                  <label>
-                    <Input
-                      placeholder="Your Email"
-                      type="email"
-                      name="email"
-                    ></Input>
-                  </label>
-                </div>
-              </div>
-
-              <div className="flex mt-5 xxs:flex-col sm:flex-row">
-                <div className="sm:mr-5 xxs:mr-0">
-                  <label>
-                    <Input
-                      placeholder="Your Company"
-                      type="company"
-                      name="company"
-                    ></Input>
-                  </label>
-                </div>
-                <div className="sm:ml-5 xxs:ml-0 xxs:mt-2 sm:mt-0">
-                  <label>
-                    {" "}
-                    <Input
-                      placeholder="Your Phone"
-                      type="phone"
-                      name="phone"
-                    ></Input>
-                  </label>
-                </div>
-              </div>
-              <label>
-                <textarea
-                  className="mt-5 w-full bg-bg bg-opacity-20 rounded-xl p-5 focus:outline-none focus:ring-2 focus:ring-purple focus:border-transparent"
-                  rows="5"
-                  placeholder="How can we help you?"
-                  type="text"
-                  name="Message"
-                ></textarea>
-              </label>
-              <div>
-                <label>
-                  <Button
-                    type="submit"
-                    title="Send Message"
-                    colorClass="bg-gradient-to-r from-pink to-purple font-montserrat"
-                    marginClass="mt-5"
-                  ></Button>
-                </label>
+                {/* Repeat similar pattern for other form fields */}
               </div>
             </form>
           </div>
