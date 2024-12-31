@@ -2,102 +2,100 @@ import React from 'react'
 import Fade from 'react-reveal/Fade'
 import AudioCard from './AudioCard'
 
+// Function to clean up audio names
+const cleanAudioLabel = (name) => {
+  return name
+    .replace(/ Final.*$/, '')          // Remove "Final" and anything after
+    .replace(/ v\d+$/, '')            // Remove version numbers
+    .replace(/ \d{4}\.\d{2}\.\d{2}$/, '') // Remove dates like 2024.01.09
+    .replace(/ 20\d{2}$/, '')         // Remove years like 2024
+    .replace(/ 20\d{2}/, ' ')         // Remove years when they're in the middle
+    .replace(/ Reel/i, '')            // Remove "Reel" (case insensitive)
+    .replace(/_/g, ' ')               // Replace underscores with spaces
+    .trim();                          // Remove extra whitespace
+};
+
+// Function to import all client data
+const importClientData = () => {
+  const clientData = [];
+  
+  try {
+    // Get all client directories
+    const clientContext = require.context('../../static/Clients', true);
+    
+    // Get unique client names
+    const clientDirs = new Set(
+      clientContext.keys()
+        .map(path => path.split('/')[1])
+        .filter(Boolean)
+    );
+
+    Array.from(clientDirs).forEach(clientName => {
+      try {
+        // Get headshot from images directory
+        const imageFiles = clientContext.keys()
+          .filter(key => key.includes(`${clientName}/images/`));
+        const headshot = imageFiles[0];
+        
+        // Get audio files
+        const audioFiles = [];
+        const seenLabels = new Set(); // Track unique labels
+        const audioKeys = clientContext.keys()
+          .filter(key => key.includes(`${clientName}/audio/`));
+        
+        // Process audio files
+        audioKeys.forEach(audioPath => {
+          const audioName = audioPath.split('/').pop().split('.')[0];
+          // Remove client name and clean the label
+          const cleanedLabel = cleanAudioLabel(audioName)
+            .replace(new RegExp(`^${clientName}\\s*`, 'i'), '') // Remove client name from start
+            .replace(new RegExp(`\\s*${clientName}\\s*`, 'i'), ' '); // Remove client name if it appears elsewhere
+          
+          // Only add if we haven't seen this label before
+          if (!seenLabels.has(cleanedLabel)) {
+            seenLabels.add(cleanedLabel);
+            audioFiles.push({
+              label: cleanedLabel,
+              url: clientContext(audioPath).default
+            });
+          }
+        });
+
+        if (headshot && audioFiles.length > 0) {
+          const clientCard = {
+            title: clientName.replace(/_/g, ' '),
+            description: "Professional voice actor",
+            imageUrl: clientContext(headshot).default,
+            audioFiles: audioFiles.sort((a, b) => a.label.localeCompare(b.label)),
+            contactInfo: {
+              email: "enquiries@spotlight.com",
+              phone: "020-7437 7631"
+            }
+          };
+          clientData.push(clientCard);
+        }
+      } catch (error) {
+        console.error(`Error processing client ${clientName}:`, error);
+      }
+    });
+
+  } catch (error) {
+    console.error('Error importing client data:', error);
+  }
+
+  return clientData;
+};
+
 const CardList = () => {
-  const cards = [
-    {
-      title: "Katie Marie-Carter",
-      description: "Professional voice actor specializing in commercials and narration",
-      imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
-      audioFiles: [
-        { label: "Advertisement", url: "https://www2.cs.uic.edu/~i101/SoundFiles/BabyElephantWalk60.wav" },
-        { label: "Audiobook", url: "https://www2.cs.uic.edu/~i101/SoundFiles/CantinaBand60.wav" },
-        { label: "Documentary", url: "https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav" }
-      ],
-      contactInfo: {
-        email: "enquiries@spotlight.com",
-        phone: "020-7437 7631"
-      }
-    },
-    {
-      title: "Katie Turner",
-      description: "Versatile voice talent for commercials and narrative work",
-      imageUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
-      audioFiles: [
-        { label: "Advertisement", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
-        { label: "Audiobook", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" },
-        { label: "Documentary", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" }
-      ],
-      contactInfo: {
-        email: "info@brynmoor.co.uk",
-        phone: "020 8144 0129"
-      }
-    },
-    {
-      title: "Rachael McGuiness",
-      description: "Liverpool-based voice artist specializing in animation and narration",
-      imageUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80",
-      audioFiles: [
-        { label: "Advertisement", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" },
-        { label: "Animation", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3" },
-        { label: "Documentary", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3" }
-      ],
-      contactInfo: {
-        email: "alex@alexpriestleytalent.com",
-        phone: "0161 505 0671"
-      }
-    },
-    {
-      title: "Mark Newsome",
-      description: "Experienced voice talent for commercials and documentaries",
-      imageUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
-      audioFiles: [
-        { label: "Advertisement", url: "https://samplelib.com/lib/preview/mp3/sample-3s.mp3" },
-        { label: "Audiobook", url: "https://samplelib.com/lib/preview/mp3/sample-6s.mp3" },
-        { label: "Documentary 1", url: "https://samplelib.com/lib/preview/mp3/sample-9s.mp3" }
-      ],
-      contactInfo: {
-        email: "nvreels@gmail.com",
-        phone: "07973818298"
-      }
-    },
-    {
-      title: "Jordan Reece",
-      description: "Professional voice artist for commercials and audiobooks",
-      imageUrl: "https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&fit=crop&w=400&q=80",
-      audioFiles: [
-        { label: "Advertisement", url: "https://samplelib.com/lib/preview/mp3/sample-12s.mp3" },
-        { label: "Audiobook", url: "https://samplelib.com/lib/preview/mp3/sample-15s.mp3" },
-        { label: "Documentary", url: "https://samplelib.com/lib/preview/mp3/sample-3s.mp3" }
-      ],
-      contactInfo: {
-        email: "manchester@narrowroad.co.uk",
-        phone: "0161-833 1605"
-      }
-    },
-    {
-      title: "Charlie Young",
-      description: "Versatile voice talent for continuity and documentary work",
-      imageUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80",
-      audioFiles: [
-        { label: "Advertisement", url: "https://actions.google.com/sounds/v1/alarms/beep_short.ogg" },
-        { label: "Continuity", url: "https://actions.google.com/sounds/v1/alarms/mechanical_clock_ring.ogg" },
-        { label: "Documentary", url: "https://actions.google.com/sounds/v1/cartoon/slide_whistle_to_drum.ogg" }
-      ],
-      contactInfo: {
-        email: "georgina@limemanagement.co.uk",
-        phone: "0161-236 0827"
-      }
-    }
-  ];
+  const cards = importClientData();
+
+  if (!cards || cards.length === 0) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="container mx-auto px-4 max-w-7xl py-12">
-      <Fade 
-        bottom 
-        distance="50px"
-        duration={800} 
-        delay={200}
-      >
+      <Fade bottom distance="50px" duration={800} delay={200}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((card, index) => (
             <Fade
@@ -107,7 +105,9 @@ const CardList = () => {
               distance="30px"
               duration={800}
             >
-              <AudioCard {...card} />
+              <div className="h-full">
+                <AudioCard {...card} />
+              </div>
             </Fade>
           ))}
         </div>
