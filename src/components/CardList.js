@@ -1,7 +1,7 @@
 import React from 'react'
 import Fade from 'react-reveal/Fade'
 import AudioCard from './AudioCard'
-import Clients from '../../static/clients'
+//import Clients from '../../static/clients'
 
 // Function to clean up audio names
 const cleanAudioLabel = (name) => {
