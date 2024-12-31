@@ -22,7 +22,7 @@ const importClientData = () => {
   
   try {
     // Get all client directories
-    const clientContext = require.context('../../static/Clients', true);
+    const clientContext = require.context('../../static/clients', true);
     
     // Get unique client names
     const clientDirs = new Set(
