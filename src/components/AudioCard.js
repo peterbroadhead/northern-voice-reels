@@ -17,6 +17,7 @@ const AudioCard = ({
   const [isLoading, setIsLoading] = useState({})
   const modalRef = useRef()
   const progressIntervals = useRef({})
+  const audioRefs = useRef({})
 
   // Debugging - log the imageUrl prop
   console.log('ImageUrl:', imageUrl);
@@ -69,46 +70,51 @@ const AudioCard = ({
     }
   }, [isModalOpen]);
 
-  const handlePlay = (audioId) => {
-    if (currentlyPlaying) {
-      const currentAudio = document.getElementById(currentlyPlaying)
-      clearInterval(progressIntervals.current[currentlyPlaying])
-      currentAudio.pause()
-      currentAudio.currentTime = 0
-    }
-
-    const audio = document.getElementById(audioId)
-    audio.play()
-    setCurrentlyPlaying(audioId)
-    
-    // Set up progress tracking
-    setProgress(prev => ({ ...prev, [audioId]: 0 }))
-    progressIntervals.current[audioId] = setInterval(() => {
-      const progress = (audio.currentTime / audio.duration) * 100
-      setProgress(prev => ({ ...prev, [audioId]: progress }))
+  const handlePlay = async (audioId) => {
+    try {
+      setIsLoading(prev => ({ ...prev, [audioId]: true }));
+      const audio = document.getElementById(audioId);
       
-      if (progress >= 100) {
-        clearInterval(progressIntervals.current[audioId])
-        setCurrentlyPlaying(null)
-        setProgress(prev => ({ ...prev, [audioId]: 0 }))
+      if (!audioRefs.current[audioId]) {
+        audioRefs.current[audioId] = audio;
+        // Pre-load the audio file
+        await audio.load();
       }
-    }, 100)
 
-    // Add ended event listener
-    audio.addEventListener('ended', () => {
-      clearInterval(progressIntervals.current[audioId])
-      setCurrentlyPlaying(null)
-      setProgress(prev => ({ ...prev, [audioId]: 0 }))
-    })
-  }
+      if (currentlyPlaying && currentlyPlaying !== audioId) {
+        const currentAudio = document.getElementById(currentlyPlaying);
+        if (currentAudio) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+          clearInterval(progressIntervals.current[currentlyPlaying]);
+        }
+      }
+
+      await audio.play();
+      setCurrentlyPlaying(audioId);
+      
+      progressIntervals.current[audioId] = setInterval(() => {
+        setProgress(prev => ({
+          ...prev,
+          [audioId]: (audio.currentTime / audio.duration) * 100
+        }));
+      }, 100);
+
+    } catch (error) {
+      console.error('Audio playback error:', error);
+    } finally {
+      setIsLoading(prev => ({ ...prev, [audioId]: false }));
+    }
+  };
 
   const handlePause = (audioId) => {
-    const audio = document.getElementById(audioId)
-    audio.pause()
-    clearInterval(progressIntervals.current[audioId])
-    setCurrentlyPlaying(null)
-    setProgress(prev => ({ ...prev, [audioId]: 0 }))
-  }
+    const audio = document.getElementById(audioId);
+    if (audio) {
+      audio.pause();
+      clearInterval(progressIntervals.current[audioId]);
+      setCurrentlyPlaying(null);
+    }
+  };
 
   // Updated stopAllAudio to handle audio ended event
   const stopAllAudio = () => {
