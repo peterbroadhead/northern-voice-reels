@@ -87,32 +87,38 @@ const importClientData = () => {
 };
 
 const CardList = () => {
-  const cards = importClientData();
-
-  if (!cards || cards.length === 0) {
-    return <div>Loading...</div>;
-  }
-
   return (
-    <div className="container mx-auto px-4 max-w-7xl py-12">
-      <Fade bottom distance="50px" duration={800} delay={200}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {cards.map((card, index) => (
-            <Fade
-              key={index}
-              bottom
-              delay={200 + (index * 100)}
-              distance="30px"
-              duration={800}
-            >
-              <div className="h-full">
-                <AudioCard {...card} />
-              </div>
-            </Fade>
-          ))}
-        </div>
-      </Fade>
-    </div>
+    <>
+      <div className="text-center mb-12">
+        <h2 className="text-4xl font-bold mb-4 text-gradient bg-gradient-to-r from-pink to-purple">
+          Listen to Our Voice Reels
+        </h2>
+        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          Explore our collection of professional voice reels. Each sample demonstrates the quality and versatility 
+          we can bring to your project, whether it's commercial, documentary, or audiobook narration.
+        </p>
+      </div>
+
+      <div className="container mx-auto px-4 max-w-7xl">
+        <Fade bottom distance="50px" duration={800} delay={200}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {importClientData().map((card, index) => (
+              <Fade
+                key={index}
+                bottom
+                delay={200 + (index * 100)}
+                distance="30px"
+                duration={800}
+              >
+                <div className="h-full">
+                  <AudioCard {...card} />
+                </div>
+              </Fade>
+            ))}
+          </div>
+        </Fade>
+      </div>
+    </>
   );
 };
 
