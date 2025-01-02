@@ -5,6 +5,10 @@ import Seo from "../components/seo"
 const BookNowPage = () => {
   return (
     <Layout>
+      <Seo 
+        title="Book Your Voice Reel Session - Northern Voice Reels"
+        description="Book your professional voice reel session in Manchester. Complete package £350 includes commercial, documentary, audiobook and specialty reels. Expert guidance from former BBC Senior Producer Chris Wallis."
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl font-bold text-center mb-8 text-gradient bg-gradient-to-r from-pink to-purple">
@@ -13,7 +17,7 @@ const BookNowPage = () => {
           
           <div className="bg-white shadow-lg rounded-lg overflow-hidden">
             <div className="p-6 sm:p-8">
-              <form className="space-y-6" name="booking" method="POST" data-netlify="true">
+              <form className="space-y-6" name="booking" method="POST" netlify>
                 <input type="hidden" name="form-name" value="booking" />
                 
                 <div>
@@ -101,6 +105,4 @@ const BookNowPage = () => {
   )
 }
 
-export default BookNowPage
-
-export const Head = () => <Seo title="Book Now" /> 
+export default BookNowPage 

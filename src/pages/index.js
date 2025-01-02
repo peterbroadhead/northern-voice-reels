@@ -11,8 +11,8 @@ const IndexPage = () => (
     <div className="h-auto w-screen">
       <Layout>
         <Seo
-          title="Holo - Gatsby Theme"
-          description="Holo is a visually striking and highly customizable open source theme built on the powerful Gatsby framework and integrated with the versatile Decap CMS."
+          title="Northern Voice Reels - Professional Voice Reel Production Manchester"
+          description="Create your professional voice reel with NVR in Manchester. Led by former BBC Senior Producer Chris Wallis, we offer commercial, documentary, and audiobook voice reels. £350 for a complete package."
         ></Seo>
         <Header></Header>
         <CardList></CardList>

@@ -95,4 +95,9 @@ const PricingPage = () => {
 
 export default PricingPage
 
-export const Head = () => <Seo title="Pricing - Voice Library" /> 
+export const Head = () => (
+  <Seo 
+    title="Voice Reel Pricing - Northern Voice Reels Manchester"
+    description="Professional voice reel production package for £350. Includes commercial, documentary, audiobook, and specialty reels. Expert guidance from former BBC producer Chris Wallis."
+  />
+) 
