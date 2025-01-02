@@ -283,7 +283,7 @@ const AudioCard = ({
                   <svg 
                     className="w-5 h-5 text-[#827fb9]" 
                     fill="none" 
-                    stroke="currentColor" 
+                    stroke="currentColor" Report
                     viewBox="0 0 24 24"
                   >
                     {globalVolume === 0 ? (

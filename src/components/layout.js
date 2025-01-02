@@ -6,16 +6,19 @@
  */
 
 import * as React from "react"
-import Footer from "./footer"
 import Navbar from "./navbar"
+import Footer from "./footer"
+import { AudioProvider } from "../context/AudioContext"
 
 const Layout = ({ children }) => {
   return (
-    <div>
-      <Navbar></Navbar>
-      {children}
-      <Footer></Footer>
-    </div>
+    <AudioProvider>
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-grow">{children}</main>
+        <Footer />
+      </div>
+    </AudioProvider>
   )
 }
 
