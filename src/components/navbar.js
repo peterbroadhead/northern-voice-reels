@@ -13,7 +13,7 @@ const Navbar = () => {
               href="/"
             >
               <span className="text-gradient bg-gradient-to-r from-pink to-purple font-semibold">
-                HOLO
+                Northern Voice Reels
               </span>
             </a>
             <div className="hidden md:block">
@@ -26,6 +26,12 @@ const Navbar = () => {
                 </Link>
                 <Link
                   className="relative after:rounded after:bg-purple after:absolute after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 text-black opacity-70 hover:opacity-100 px-3 py-2 rounded-md text-sm font-medium font-montserrat"
+                  to="/services"
+                >
+                  Services
+                </Link>
+                <Link
+                  className="relative after:rounded after:bg-purple after:absolute after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 text-black opacity-70 hover:opacity-100 px-3 py-2 rounded-md text-sm font-medium font-montserrat"
                   to="/listen"
                 >
                   Listen
@@ -35,12 +41,6 @@ const Navbar = () => {
                   to="/pricing"
                 >
                   Pricing
-                </Link>
-                <Link
-                  className="relative after:rounded after:bg-purple after:absolute after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 text-black opacity-70 hover:opacity-100 px-3 py-2 rounded-md text-sm font-medium font-montserrat"
-                  to="/contact"
-                >
-                  Contact
                 </Link>
                 <div className="items-center">
                   <Link
@@ -86,6 +86,12 @@ const Navbar = () => {
             </Link>
             <Link
               className="text-black block px-3 py-2 rounded-md text-base font-medium"
+              to="/services"
+            >
+              Services
+            </Link>
+            <Link
+              className="text-black block px-3 py-2 rounded-md text-base font-medium"
               to="/listen"
             >
               Listen
@@ -95,12 +101,6 @@ const Navbar = () => {
               to="/pricing"
             >
               Pricing
-            </Link>
-            <Link
-              className="text-black block px-3 py-2 rounded-md text-base font-medium"
-              to="/contact"
-            >
-              Contact
             </Link>
             <div className="mt-4">
               <Link
