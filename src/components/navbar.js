@@ -45,7 +45,7 @@ const Navbar = () => {
                 <div className="items-center">
                   <Link
                     to="/book-now"
-                    className="transition-all duration-500ms ease-in-out hover:ease-in-out bg-transparent mt-5 py-2.5 px-4 text-base font-medium text-center text-black rounded-lg border border-purple hover:text-white border-black  hover:bg-purple"
+                    className="transition-all duration-500ms ease-in-out hover:ease-in-out bg-purple mt-5 py-2.5 px-4 text-base font-medium text-center text-white rounded-lg border border-purple hover:text-purple hover:bg-transparent"
                   >
                     Book Now
                   </Link>
@@ -105,7 +105,7 @@ const Navbar = () => {
             <div className="mt-4">
               <Link
                 to="/book-now"
-                className="w-full flex items-center justify-center px-4 py-2 border border-purple rounded-md shadow-sm text-sm font-medium text-black hover:bg-purple hover:text-white"
+                className="w-full flex items-center justify-center px-4 py-2 border border-purple rounded-md shadow-sm text-sm font-medium text-white bg-purple hover:bg-transparent hover:text-black"
               >
                 Book Now
               </Link>

@@ -40,21 +40,46 @@ const Footer = () => {
             </div>
 
             <div className="place-self-start self-center xxs:hidden lg:block">
-              <ul className="text-xl font-montserrat font-medium">
+              <ul className="text-xl font-montserrat font-medium space-y-2">
                 <li>
-                  <Link to="/">Home</Link>
+                  <Link 
+                    to="/about"
+                    className="text-black opacity-70 hover:opacity-100"
+                  >
+                    About
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/about">About</Link>
+                  <Link 
+                    to="/services"
+                    className="text-black opacity-70 hover:opacity-100"
+                  >
+                    Services
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/contact">Contact</Link>
+                  <Link 
+                    to="/listen"
+                    className="text-black opacity-70 hover:opacity-100"
+                  >
+                    Listen
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/book-now">Book Now</Link>
+                  <Link 
+                    to="/pricing"
+                    className="text-black opacity-70 hover:opacity-100"
+                  >
+                    Pricing
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/pricing">Pricing</Link>
+                  <Link 
+                    to="/book-now"
+                    className="text-black opacity-70 hover:opacity-100"
+                  >
+                    Book Now
+                  </Link>
                 </li>
               </ul>
             </div>

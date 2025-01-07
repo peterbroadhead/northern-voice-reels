@@ -14,7 +14,7 @@ const PricingPage = () => {
           </h1>
           <div className="mb-8">
             <span className="text-6xl font-bold text-gradient bg-gradient-to-r from-pink to-purple">
-              £350
+              £375
             </span>
           </div>
           <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
@@ -60,33 +60,40 @@ const PricingPage = () => {
                 </ul>
                 <div className="mt-6 p-4 bg-gray-50 rounded-lg">
                   <p className="text-sm text-gray-600">
-                    This price includes professional guidance but requires you to conduct your own research for materials. We'll help direct your research to ensure the best possible outcome.
+                    This price includes professional guidance but requires you to conduct your own research for materials and source your own music, guided by us.
+                  </p>
+                  <p className="text-sm text-gray-600 mt-4">
+                    For an additional £25, we can host your headshot and reels on our website. While we don't act as agents, we're happy to pass on any contact requests.
                   </p>
                 </div>
-                <Link
-                  to="/book-now"
-                  className="mt-6 w-full inline-flex justify-center py-2 px-4 border border-purple rounded-md shadow-sm text-sm font-medium text-black hover:text-white hover:bg-purple focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple transition-all duration-300"
-                >
-                  Book Now
-                </Link>
+                <div className="mt-6 flex justify-center">
+                  <Link
+                    to="/book-now"
+                    className="inline-flex justify-center min-w-[200px] py-3 px-12 border-2 border-purple rounded-md shadow-sm text-base font-medium text-white bg-purple hover:text-purple hover:bg-white hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple transition-all duration-300 transform hover:-translate-y-0.5"
+                  >
+                    Book Now
+                  </Link>
+                </div>
               </div>
             </div>
           </Fade>
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 max-w-3xl mx-auto">
           <p className="text-lg text-gray-600 mb-4">
-            Other packages are available by negotiation
+            If you know what you want to record and just need production services, we can provide custom pricing.
           </p>
           <p className="text-lg text-gray-600 mb-8">
-            Would you like to know more? Get in touch to discuss your specific requirements
+            Would you like to know more? Get in touch to discuss your specific requirements and pricing.
           </p>
-          <Link
-            to="/contact"
-            className="mt-4 inline-flex items-center px-6 py-3 border border-purple text-base font-medium rounded-md text-black hover:text-white hover:bg-purple focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple transition-all duration-300"
-          >
-            Get in Touch
-          </Link>
+          <div className="flex justify-center">
+            <Link
+              to="/contact"
+              className="inline-flex justify-center min-w-[200px] py-3 px-12 border-2 border-purple rounded-md text-base font-medium text-white bg-purple hover:text-purple hover:bg-white hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple transition-all duration-300 transform hover:-translate-y-0.5"
+            >
+              Get in Touch
+            </Link>
+          </div>
         </div>
       </div>
     </Layout>
