@@ -14,7 +14,9 @@ const IndexPage = () => (
           description="Create your professional voice reel with NVR in Manchester. Led by former BBC Senior Producer Chris Wallis, we offer commercial, documentary, and audiobook voice reels. £350 for a complete package."
         ></Seo>
         <Header></Header>
-        <CardList />
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 md:px-3">
+          <CardList />
+        </div>
         
         <div className="max-w-7xl mx-auto px-4 lg:px-6 md:px-3 mb-32 mt-32">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">Voice Reel Resources</h2>

@@ -88,8 +88,8 @@ const importClientData = () => {
 
 const CardList = () => {
   return (
-    <>
-      <div className="text-center mb-12">
+    <div className="w-full">
+      <div className="text-center mb-12 px-4">
         <h2 className="text-4xl font-bold mb-4 text-gradient bg-gradient-to-r from-pink to-purple">
           Listen to Our Voice Reels
         </h2>
@@ -99,26 +99,16 @@ const CardList = () => {
         </p>
       </div>
 
-      <div className="container mx-auto px-4 max-w-7xl">
-        <Fade bottom distance="50px" duration={800} delay={200}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {importClientData().map((card, index) => (
-              <Fade
-                key={index}
-                bottom
-                delay={200 + (index * 100)}
-                distance="30px"
-                duration={800}
-              >
-                <div className="h-full">
-                  <AudioCard {...card} />
-                </div>
-              </Fade>
-            ))}
-          </div>
-        </Fade>
+      <div className="w-full px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          {importClientData().map((card, index) => (
+            <div key={index} className="w-full h-full">
+              <AudioCard {...card} />
+            </div>
+          ))}
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
