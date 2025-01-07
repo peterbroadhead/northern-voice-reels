@@ -1,6 +1,5 @@
 import React from "react"
 import Fade from "react-reveal/Fade"
-import hero from "../../images/removed-Holographic.webp"
 import studioImage from "../../../static/img/studio.jpg"
 
 const Header = () => {
