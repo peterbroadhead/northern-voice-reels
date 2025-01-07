@@ -10,7 +10,9 @@ const Footer = () => {
         <div className="footer bg-gradient-to-r from-pink to-purple p-10 mt-10 rounded-xl">
           <div className="grid grid-cols-3 xxs:grid-cols-1 lg:grid-cols-3">
             <div>
-              <img className="max-h-28 max-w-xs" src={logo} alt="Website"></img>
+              <span className="text-white font-semibold text-3xl">
+                Northern Voice Reels
+              </span>
               <p className="text-black opacity-70 text-sm mt-5 ">
                 Professional voiceover services<br></br>
                 and bespoke voice reel<br></br>
@@ -88,8 +90,8 @@ const Footer = () => {
               <h3 className="text-xl font-montserrat font-bold mb-4">Contact Us</h3>
               <ul className="text-base font-montserrat">
                 <li className="mb-2">
-                  <a href="tel:07973818298" className="hover:opacity-70">
-                    07973 818 298
+                  <a href="tel:+447973818298" className="hover:opacity-70">
+                    +44 7973 818 298
                   </a>
                 </li>
                 <li className="mb-2">
