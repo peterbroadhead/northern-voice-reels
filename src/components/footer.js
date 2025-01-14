@@ -14,8 +14,7 @@ const Footer = () => {
                 Northern Voice Reels
               </span>
               <p className="text-black opacity-70 text-sm mt-5 ">
-                Professional voiceover services<br></br>
-                and bespoke voice reel<br></br>
+                Professional voice reel<br></br>
                 production in Manchester.
               </p>
               <p className="text-white text-lg font-bold mt-20">

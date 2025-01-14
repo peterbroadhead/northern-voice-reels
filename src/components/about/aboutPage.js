@@ -7,6 +7,8 @@ const AboutPage = () => {
       <h1 className="text-4xl font-bold mb-4 text-gradient bg-gradient-to-r from-pink to-purple">
         About Northern Voice Reels
       </h1>
+
+
       
       <section className="mb-16 bg-white rounded-lg shadow-md p-8">
         <h2 className="text-2xl font-semibold text-gray-900 mb-6 border-b pb-2">
@@ -21,7 +23,7 @@ const AboutPage = () => {
           <p className="font-medium mb-4">The fee covers:</p>
           <ul className="list-disc pl-6 mb-6 space-y-2">
             <li>Four hours of tuition on Zoom with Chris Wallis</li>
-            <li>One hour in a professional studio on Deansgate, Manchester</li>
+            <li>One hour in a professional recording studio with Chris producing and an engineer.</li>
             <li>Recording of four reels: audiobook, documentary, commercials, and one other to be chosen after discussion (could be singing, gaming, or corporate)</li>
           </ul>
           <p className="mb-6">
@@ -30,6 +32,38 @@ const AboutPage = () => {
           </p>
         </div>
       </section>
+
+                    
+      <div className="max-w-7xl mx-auto px-4 lg:px-6 md:px-3 mb-32 mt-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+            <div>
+              <h3 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4">How does a voice reel get you work?</h3>
+              <div className="aspect-video w-full">
+                <iframe
+                  className="w-full h-full rounded-lg md:rounded-xl"
+                  src="https://www.youtube.com/embed/6jQ-R2rHnBs"
+                  title="How does a voice reel get you work?"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4">How a radio/audio producer uses Spotlight</h3>
+              <div className="aspect-video w-full">
+                <iframe
+                  className="w-full h-full rounded-lg md:rounded-xl"
+                  src="https://www.youtube.com/embed/pciajrOhgnU"
+                  title="How a radio/audio producer uses Spotlight"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
 
       <section className="mb-16 bg-white rounded-lg shadow-md p-8">
         <h2 className="text-2xl font-semibold text-gray-900 mb-6 border-b pb-2">
@@ -65,24 +99,25 @@ const AboutPage = () => {
                 impressive portfolio includes:
               </p>
               <ul className="list-disc pl-6 mb-8 space-y-2">
-                <li>Production of BBC Radio Book at Bedtime and Book of the Week</li>
+                <li>200 hours of Book at Bedtime and Book of the week</li>
                 <li>A stint on The Archers</li>
-                <li>Direction of "Death Of A Salesman" with David Suchet and Zoe Wanamaker for Radio 3</li>
-                <li>Production of over 100 hours of audiobooks with renowned readers including John Le Carre and multiple Doctors Who</li>
-                <li>Recording of Nelson Mandela's Autobiography with John Kani in South Africa</li>
-                <li>Production of The Bible (80 hours) read by David Suchet</li>
+                <li>150 hours of radio drama with hundreds of actors including Sir Derek Jacobi, David Tennant, Eartha Kitt, Samantha Morton</li>
+                <li>50 hours of audiobooks with readers including John Le Carre, the cast of Red Dwarf and multiple Dr Whos.</li>
+                <li>Nelson Mandela's Autobiography with John Kani in South Africa</li>
+                <li>The Bible (80 hours) read by Sir David Suchet</li>
               </ul>
             </div>
           </div>
-          <p className="font-medium mb-4">Chris has taught at various prestigious institutions including:</p>
+          <p className="font-medium mb-4">Chris has taught at various drama schools:</p>
           <ul className="list-disc pl-6 mb-8 space-y-2">
             <li>Radio at ALRA, MMU and E15</li>
             <li>Introduction to Acting at Mountview (where he taught Eddie Marsan)</li>
             <li>Voice reels at Royal Central and E15</li>
           </ul>
           <Link 
-            to="/audio" 
+            to="https://www.watershedtheatre.com/chris-wallis/" 
             className="inline-block px-6 py-3 bg-gradient-to-r from-pink to-purple text-white font-medium rounded-lg hover:opacity-90 transition-opacity duration-200 shadow-md"
+            target="_blank"
           >
             View Chris's full portfolio
           </Link>

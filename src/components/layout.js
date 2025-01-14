@@ -9,6 +9,7 @@ import * as React from "react"
 import Navbar from "./navbar"
 import Footer from "./footer"
 import { AudioProvider } from "../context/AudioContext"
+import Testimonials from './Testimonials'
 
 const Layout = ({ children }) => {
   return (
@@ -16,6 +17,7 @@ const Layout = ({ children }) => {
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-grow">{children}</main>
+        <Testimonials />
         <Footer />
       </div>
     </AudioProvider>

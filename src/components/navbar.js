@@ -12,7 +12,7 @@ const Navbar = () => {
               className="text-black flex-shrink-0 font-montserrat font-semibold"
               href="/"
             >
-              <span className="text-gradient bg-gradient-to-r from-pink to-purple font-semibold">
+              <span className="text-gradient bg-gradient-to-r from-pink to-purple font-semibold text-2xl">
                 Northern Voice Reels
               </span>
             </a>

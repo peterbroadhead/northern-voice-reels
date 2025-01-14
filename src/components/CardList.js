@@ -83,7 +83,16 @@ const importClientData = () => {
     console.error('Error importing client data:', error);
   }
 
-  return clientData;
+  // Sort clientData by last name before returning
+  return clientData.sort((a, b) => 
+    getLastName(a.title).localeCompare(getLastName(b.title))
+  );
+};
+
+// Add this new function after cleanAudioLabel
+const getLastName = (fullName) => {
+  const names = fullName.trim().split(' ');
+  return names[names.length - 1];
 };
 
 const CardList = () => {
