@@ -66,7 +66,7 @@ const ServicesPage = () => {
 
           <div className="text-center">
             <p className="text-2xl font-bold text-black mb-4">
-              Complete Package: £350
+              Complete Package: £375
             </p>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
               Includes personal tuition, studio recording time, professional editing, and music beds.

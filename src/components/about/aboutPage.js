@@ -133,6 +133,16 @@ const AboutPage = () => {
             Working alongside Chris is Luke Staniland, a very experienced music and speech engineer. 
             Together we help create reels to maximise your casting potential.
           </p>
+          <p className="mt-4">
+            Whilst we prefer to record in Manchester we occasionally use CK Studios in Ealing with the hugely experienced Chris Kent as engineer. Chris is in the video doing T&Cs. 
+          </p>
+          <Link 
+            to="https://www.christopherkent.co.uk/voiceovers" 
+            className="inline-block mt-4 px-6 py-3 bg-gradient-to-r from-pink to-purple text-white font-medium rounded-lg hover:opacity-90 transition-opacity duration-200 shadow-md"
+            target="_blank"
+          >
+            View Chris's extraordinary work here
+          </Link>
         </div>
       </section>
 
