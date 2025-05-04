@@ -14,7 +14,7 @@ const PricingPage = () => {
           </h1>
           <div className="mb-8">
             <span className="text-6xl font-bold text-gradient bg-gradient-to-r from-pink to-purple">
-              £375
+              £400
             </span>
           </div>
           <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">

@@ -129,12 +129,9 @@ const AboutPage = () => {
           Our Team
         </h2>
         <div className="prose prose-lg max-w-none">
-          <p>
-            Working alongside Chris is Luke Staniland, a very experienced music and speech engineer. 
-            Together we help create reels to maximise your casting potential.
-          </p>
           <p className="mt-4">
-            Whilst we prefer to record in Manchester we occasionally use CK Studios in Ealing with the hugely experienced Chris Kent as engineer. Chris is in the video doing T&Cs. 
+          In London we are very lucky to have highly experienced voice artist Chris Kent as a partner. Chris is the voice of some of the Bond movie trailers and he voiced Santa Claus for Alexa in 2023.Chris has a studio in West London that he uses both for his own work and to record other artists, including the wonderful Judi Dench. Chris is in the video below doing some T&C’s for a very demanding producer.’
+
           </p>
           <Link 
             to="https://www.christopherkent.co.uk/voiceovers" 

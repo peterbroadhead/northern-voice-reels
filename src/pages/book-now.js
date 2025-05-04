@@ -19,7 +19,7 @@ const BookNowPage = () => {
               </h1>
               <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
                 Ready to create your professional voice reel? Get in touch with us to book your session. 
-                Our £375 package includes four distinct reels - commercial, documentary, audiobook, and a specialty reel of your choice.
+                Our £400 package includes four distinct reels - commercial, documentary, audiobook, and a specialty reel of your choice.
               </p>
             </div>
 
@@ -34,7 +34,7 @@ const BookNowPage = () => {
                   >
                     nvr@watershed.uk.com
                   </a>
-                  {' '}including your phone number. Our reply emails may go to your junk folder, so we'll text you back instead.
+                  {' '}<b style={{textShadow: '0.5px 0 BLACK'}}>including your phone number.</b> Our reply emails may go to your junk folder, so we'll text you back instead.
                 </p>
                 <p className="text-lg text-gray-600 mb-6">
                   Alternatively, text or WhatsApp{' '}

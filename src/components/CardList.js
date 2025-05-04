@@ -102,9 +102,8 @@ const CardList = () => {
         <h2 className="text-4xl font-bold mb-4 text-gradient bg-gradient-to-r from-pink to-purple">
           Listen to Our Voice Reels
         </h2>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-          Explore our collection of professional voice reels. Each sample demonstrates the quality and versatility 
-          we can bring to your project, whether it's commercial, documentary, or audiobook narration.
+        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">          
+          Explore the reels we have made with our clients. Each sample demonstrates the quality and versatility we can bring to your project, whether it's for commercial, documentary, audiobook, gaming, animation, or corporate reels.
         </p>
       </div>
 

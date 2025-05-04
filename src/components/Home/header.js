@@ -20,7 +20,7 @@ const Header = () => {
               yet less than 35% of Spotlight and Mandy members have voice reels. Get ahead of 
               the game, get a voice reel specifically designed for your voice.
             </p>
-
+            <h1 className="text-black text-4xl font-semibold opacity-70">MANCHESTER and LONDON</h1>
             <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md">
                 <a
@@ -50,7 +50,7 @@ const Header = () => {
                   href="/about"
                   className="transition-all duration-500ms ease-in-out hover:ease-in-out w-full flex items-center justify-center px-8 py-3 border border-purple text-base font-medium rounded-md text-black hover:text-white bg-transparent hover:bg-purple md:py-3 md:text-lg md:px-10"
                 >
-                  Learn More
+                  What we do
                 </a>
               </div>
             </div>

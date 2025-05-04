@@ -43,8 +43,7 @@ const ServicesPage = () => {
                   Professional Recording
                 </h2>
                 <p className="text-gray-600">
-                  Following your tuition, you'll have a one-hour session in our professional studio 
-                  on Deansgate, Manchester. Here, we'll record four distinct reels: audiobook, 
+                  Following your tuition, you'll have up to 90 minutes in a recording studio, including editing. Here, we'll record four distinct reels: audiobook, 
                   documentary, commercials, and a fourth speciality reel of your choice.
                 </p>
               </div>
@@ -66,7 +65,7 @@ const ServicesPage = () => {
 
           <div className="text-center">
             <p className="text-2xl font-bold text-black mb-4">
-              Complete Package: £375
+              Complete Package: £400
             </p>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
               Includes personal tuition, studio recording time, professional editing, and music beds.
