@@ -15,7 +15,7 @@ const IndexPage = () => (
         ></Seo>
         <Header></Header>
         <div className="max-w-7xl mx-auto px-4 lg:px-6 md:px-3">
-          <CardList sortBy="lastName" />
+          <CardList />
         </div>
       </Layout>
     </div>

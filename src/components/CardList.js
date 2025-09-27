@@ -61,12 +61,27 @@ const importClientData = () => {
           }
         });
 
+        // Get info.json data for order
+        let order = 999; // Default high order for clients without order field
+        try {
+          const infoPath = `./${clientName}/info.json`;
+          const infoData = clientContext.keys()
+            .find(key => key === infoPath);
+          if (infoData) {
+            const info = clientContext(infoData);
+            order = info.order || 999;
+          }
+        } catch (infoError) {
+          console.warn(`Could not load info.json for ${clientName}:`, infoError);
+        }
+
         if (headshot && audioFiles.length > 0) {
           const clientCard = {
             title: clientName.replace(/_/g, ' '),
             description: "Professional voice actor",
             imageUrl: clientContext(headshot).default,
             audioFiles: audioFiles.sort((a, b) => a.label.localeCompare(b.label)),
+            order: order,
             contactInfo: {
               email: "enquiries@spotlight.com",
               phone: "020-7437 7631"
@@ -83,10 +98,13 @@ const importClientData = () => {
     console.error('Error importing client data:', error);
   }
 
-  // Sort clientData by last name before returning
-  return clientData.sort((a, b) => 
-    getLastName(a.title).localeCompare(getLastName(b.title))
-  );
+  // Sort clientData by order field, then by last name as fallback
+  return clientData.sort((a, b) => {
+    if (a.order !== b.order) {
+      return a.order - b.order;
+    }
+    return getLastName(a.title).localeCompare(getLastName(b.title));
+  });
 };
 
 // Add this new function after cleanAudioLabel
